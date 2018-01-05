@@ -1,0 +1,41 @@
+server:
+   port: 81
+   tomcat:
+     uri-encoding: UTF-8
+
+banner:
+   charset: UTF-8
+
+spring:
+   profiles:
+      active: dev
+   http:
+      encoding:
+        charset: UTF-8
+        enabled: true
+        force: true
+   datasource:
+      url: jdbc:mysql://aaom:5582/dfs?autoReconnect=true&failOverReadOnly=false&maxReconnects=10&characterEncoding=utf8&useSSL=true
+      username: asdf
+      password: asdf
+      driver-class-name: com.mysql.jdbc.Driver
+
+logging:
+  level:
+     root: WARN
+     org.springframework.web: DEBUG
+  file: my.log
+  pattern:
+     console: "%d{yyyy/MM/dd-HH:mm:ss} [%thread] %-5level %logger- %msg%n"
+     file: "%d{yyyy/MM/dd-HH:mm} [%thread] %-5level %logger- %msg%n"
+
+sodbvi:
+   secret: ${random.value}
+   bignumber: ${random.long}
+   uuid: ${random.uuid}
+   number:
+      less:
+         than:
+            ten: ${random.int(10)}
+      in:
+         range: ${random.int[1024,65536]}

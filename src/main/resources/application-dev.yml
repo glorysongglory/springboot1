@@ -1,0 +1,5 @@
+com:
+   sodbvi:
+      name: sodbvi
+      msg: 啊斯蒂芬阿德法撒旦法
+      message: message is ${com.sodbvi.name}  ${com.sodbvi.msg}

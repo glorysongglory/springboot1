@@ -1,0 +1,5 @@
+com:
+   sodbvi:
+      name: sodbvi2
+      msg: \u6D4B\u8BD5\u5185\u5BB92
+      message: message is ${com.sodbvi.name}  ${com.sodbvi.msg}
