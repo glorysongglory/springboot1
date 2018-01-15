@@ -6,11 +6,16 @@ com:
 spring:
    redis:
      database: 0
-     host: 1.1.1.1
-     port: 0000
-     password: xxxxx
+     host: 123.207.178.189
+     port: 6385
+     password: hixianchang
      pool:
        max-active: 8
        max-wait: 60
        min-idle: 0
      timeout: 0
+   session:
+     store-type: redis
+     redis:
+       namespace: fuck
+       flush-mode: on_save
