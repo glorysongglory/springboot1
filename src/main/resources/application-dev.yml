@@ -6,9 +6,9 @@ com:
 spring:
    redis:
      database: 0
-     host: 123.207.178.189
-     port: 6385
-     password: hixianchang
+     host: 11111111
+     port: 1111
+     password: 111111
      pool:
        max-active: 8
        max-wait: 60
