@@ -15,9 +15,9 @@ spring:
         enabled: true
         force: true
    datasource:
-      url: jdbc:mysql://aaom:5582/dfs?autoReconnect=true&failOverReadOnly=false&maxReconnects=10&characterEncoding=utf8&useSSL=true
-      username: asdf
-      password: asdf
+      url: jdbc:mysql://127.0.0.1:3306/sb?autoReconnect=true&failOverReadOnly=false&maxReconnects=10&characterEncoding=utf8&useSSL=true
+      username: root
+      password: abc123
       driver-class-name: com.mysql.jdbc.Driver
 
 logging:
@@ -39,3 +39,9 @@ sodbvi:
             ten: ${random.int(10)}
       in:
          range: ${random.int[1024,65536]}
+
+mybatis:
+  type-aliases-package: com.sodbvi.springboot.domain
+  mapper-locations: classpath:mapper/*.xml
+
+
