@@ -19,6 +19,18 @@ spring:
       username: root
       password: abc123
       driver-class-name: com.mysql.jdbc.Driver
+   freemarker:
+     template-loader-path: classpath:/templates/
+     cache: false
+     charset: utf-8
+     check-template-location: true
+     content-type: text/html
+     expose-request-attributes: true
+     expose-session-attributes: true
+     request-context-attribute: true
+     suffix: .ftl
+
+
 
 logging:
   level:
