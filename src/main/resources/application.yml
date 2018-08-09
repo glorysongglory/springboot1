@@ -29,6 +29,28 @@ spring:
      expose-session-attributes: true
      request-context-attribute: true
      suffix: .ftl
+   rabbitmq:
+     host: 127.0.0.1
+     port: 5672
+     virtual-host: /v
+     username: admin
+     password: admin
+
+   redis:
+     database: 0
+     host: 127.0.0.1
+     port: 6379
+     password:
+     pool:
+       max-active: 8
+       max-wait: 60
+       min-idle: 0
+     timeout: 0
+   session:
+     store-type:
+     redis:
+       namespace: fuckredis
+       flush-mode: on_save
 
 
 
