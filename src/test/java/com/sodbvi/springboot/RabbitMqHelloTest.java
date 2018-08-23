@@ -1,6 +1,7 @@
 package com.sodbvi.springboot;
 
 import com.sodbvi.springboot.domain.User;
+import com.sodbvi.springboot.rabbitmq.fanout.FanoutSender;
 import com.sodbvi.springboot.rabbitmq.hello.HelloSender;
 import com.sodbvi.springboot.rabbitmq.many.Sender1;
 import com.sodbvi.springboot.rabbitmq.many.Sender2;
@@ -36,6 +37,9 @@ public class RabbitMqHelloTest {
     @Autowired
     private TopicSender topicSender;
 
+    @Autowired
+    private FanoutSender fanoutSender;
+
     @Test
     public void hello() throws Exception {
         helloSender.send();
@@ -70,6 +74,11 @@ public class RabbitMqHelloTest {
         topicSender.send();
         topicSender.send1();
         topicSender.send2();
+    }
+
+    @Test
+    public void fanout() throws Exception {
+        fanoutSender.send();
     }
 
 }
