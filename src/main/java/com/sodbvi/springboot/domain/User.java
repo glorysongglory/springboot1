@@ -1,9 +1,12 @@
 package com.sodbvi.springboot.domain;
 
+import java.io.Serializable;
+
 /**
  * Created by glory on 2017/5/26.
  */
-public class User {
+public class User implements Serializable{
+
     private Long id;
     private String name;
     private Integer age;
@@ -31,5 +34,14 @@ public class User {
 
     public void setAge(Integer age) {
         this.age = age;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", age=" + age +
+                '}';
     }
 }

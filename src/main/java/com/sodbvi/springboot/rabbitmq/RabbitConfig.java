@@ -22,4 +22,10 @@ public class RabbitConfig {
         return new Queue("sodbvi");
     }
 
+    @Bean
+    public Queue objectQueue() {
+        return new Queue("object");
+    }
+
+
 }
