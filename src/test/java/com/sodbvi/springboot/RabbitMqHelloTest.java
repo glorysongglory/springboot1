@@ -5,6 +5,7 @@ import com.sodbvi.springboot.rabbitmq.hello.HelloSender;
 import com.sodbvi.springboot.rabbitmq.many.Sender1;
 import com.sodbvi.springboot.rabbitmq.many.Sender2;
 import com.sodbvi.springboot.rabbitmq.object.ObjectSender;
+import com.sodbvi.springboot.rabbitmq.topic.TopicSender;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,6 +32,9 @@ public class RabbitMqHelloTest {
 
     @Autowired
     private ObjectSender objectSender;
+
+    @Autowired
+    private TopicSender topicSender;
 
     @Test
     public void hello() throws Exception {
@@ -59,6 +63,13 @@ public class RabbitMqHelloTest {
         user.setId(2l);
         user.setName("objectName");
         objectSender.send(user);
+    }
+
+    @Test
+    public void topic() throws Exception {
+        topicSender.send();
+        topicSender.send1();
+        topicSender.send2();
     }
 
 }
